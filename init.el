@@ -1,3 +1,4 @@
+
 ;; Disable alarm bell
 (setq ring-bell-function 'ignore)
 
@@ -154,7 +155,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (helm-ag helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
+    (helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
