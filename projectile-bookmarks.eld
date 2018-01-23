@@ -1,1 +1,1 @@
-("~/Google Drive/apps/nexaas/rexpense/" "~/.emacs.d/" "~/.emacs.d/../Google Drive/apps/nexaas/rexpense/")
+("~/.emacs.d/" "~/Google Drive/apps/nexaas/rexpense/" "~/Google Drive/apps/pipefy/graphql_tests/" "~/Google Drive/apps/nexaas/rexpense" "~/Google Drive/apps/mine/http_repeater/" "~/Google Drive/apps/nexaas/postmark_repeater/" "~/Google Drive/apps/nexaas/receipt_parser/" "~/Google Drive/apps/nexaas/journal/" "~/Google Drive/apps/nexaas/passaporteweb-client-ruby/" "~/Google Drive/study/" "~/Google Drive/study" "~/.emacs.d/../Google Drive/apps/nexaas/rexpense/")

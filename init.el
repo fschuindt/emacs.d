@@ -1,4 +1,3 @@
-
 ;; Disable alarm bell
 (setq ring-bell-function 'ignore)
 
@@ -6,6 +5,19 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
+
+;; Require to be used with neotree
+(require 'all-the-icons)
+
+;; Use neotree and set toggle shortcut
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+;; Disable UTF-8 file tags
+(setq ruby-insert-encoding-magic-comment nil)
+
+;; Disable auto save files
+(setq auto-save-default nil)
 
 ;; Manage Emacs backup files
 (setq backup-directory-alist `(("." . "~/.emacs_backups")))
@@ -33,7 +45,7 @@
 (set-foreground-color "#A8A8A8")
 
 ;; Default font
-(set-frame-font "Inconsolata 19" nil t)
+(set-frame-font "Inconsolata 24" nil t)
 
 ;; Use spaces to indent
 (setq-default indent-tabs-mode nil)
@@ -155,7 +167,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
+    (all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
