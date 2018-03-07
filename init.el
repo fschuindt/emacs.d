@@ -6,12 +6,33 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
-;; Require to be used with neotree
+;; Start exec-path-from shell
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+;; Required to be used with neotree
 (require 'all-the-icons)
 
 ;; Use neotree and set toggle shortcut
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+
+;; Every time when the neotree window is opened, let it find current
+;; file and jump to node.
+(setq neo-smart-open t)
+
+;; Integrate neotree with projectile
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
+;; Use ls-lisp instead ot the system's ls.
+;; Sort directories to be shown first in Dired mode.
+(require 'ls-lisp)
+(setq ls-lisp-dirs-first t)
+(setq ls-lisp-use-insert-directory-program nil)
+
+;; Require vmd-mode and set its key
+(require 'vmd-mode)
+(global-set-key [f9] 'vmd-mode)
 
 ;; Disable UTF-8 file tags
 (setq ruby-insert-encoding-magic-comment nil)
@@ -29,23 +50,12 @@
   kept-old-versions 2
   version-control t)
 
-;; Select theme
-(load-theme 'sanityinc-tomorrow-bright t)
-
 ;; Show line numbers
 (global-linum-mode t)
 (setq linum-format " %d  ")
 
-;; Line number colors
-(set-face-foreground 'linum "#444444")
-(set-face-background 'linum "#161616")
-
-;; Set foreground/background color to match with my shell
-(set-background-color "#1F1E1E")
-(set-foreground-color "#A8A8A8")
-
 ;; Default font
-(set-frame-font "Inconsolata 24" nil t)
+(set-frame-font "Inconsolata 28" nil t)
 
 ;; Use spaces to indent
 (setq-default indent-tabs-mode nil)
@@ -92,12 +102,46 @@
 ;; Show Invisibles - END
 ;; -------------------------------------
 
+;; -------------------------------------
+;; Blackfy and Whitefy - BEGIN
+;; -------------------------------------
+
+(defun whitefy ()
+  (interactive)
+  (load-theme 'flatui t)
+  (set-face-attribute 'mode-line-buffer-id nil :foreground "white")
+  (set-face-foreground 'dired-directory "dark magenta")
+)
+
+(defun blackfy ()
+  ;; Allow function to be used with M-x
+  (interactive)
+
+  ;; Use Tomorrow Night theme
+  (load-theme 'sanityinc-tomorrow-bright t)
+
+  ;; Line number colors
+  (set-face-foreground 'linum "#444444")
+  (set-face-background 'linum "#161616")
+
+  ;; Foreground/Background color
+  (set-background-color "#1F1E1E")
+  (set-foreground-color "#878787")
+
+  ;; Column at line 80' color
+  (setq fci-rule-color "#444444")
+
+)
+
+;; -------------------------------------
+;; Blackfy and Whitefy - END
+;; -------------------------------------
+
 ;; -----------------------------
 ;; Column at line 80' - BEGIN
 ;; -----------------------------
 
 (setq fci-rule-width 1)
-(setq fci-rule-color "#444444")
 
 (defun sanityinc/fci-enabled-p () (symbol-value 'fci-mode))
 
@@ -154,6 +198,9 @@
 (setq projectile-enable-caching t)
 ;; (global-set-key (kbd "C-c p .") 'helm-projectile-find-file-dwim)
 
+;; Set whitefy() as main theme script
+(whitefy)
+
 ;; custom-set-variables
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -167,7 +214,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
+    (protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
