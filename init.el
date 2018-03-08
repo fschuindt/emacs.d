@@ -60,6 +60,11 @@
 ;; Use spaces to indent
 (setq-default indent-tabs-mode nil)
 
+;; But use "visual tabs" for C programming
+(setq-default c-basic-offset 4
+                  tab-width 4
+                  indent-tabs-mode t)
+
 (setq highlight-indentation-mode t)
 ;; (set-face-background 'highlight-indentation-face "#141414")
 
