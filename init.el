@@ -63,13 +63,22 @@
 ;; Default font
 (set-frame-font "Inconsolata 28" nil t)
 
-;; Use spaces to indent
-(setq-default indent-tabs-mode nil)
+;; Use spaces to indent function
+(defun soft-tabs ()
+  (interactive)
+  (setq-default indent-tabs-mode nil)
+)
 
-;; But use "visual tabs" for C programming
-(setq-default c-basic-offset 4
-                  tab-width 4
-                  indent-tabs-mode t)
+;; Use TABs to indent function
+(defun hard-tabs ()
+  (interactive)
+  (setq-default c-basic-offset 4
+				tab-width 4
+                indent-tabs-mode t)
+)
+
+;; Default to soft-tabs
+(soft-tabs)
 
 (setq highlight-indentation-mode t)
 ;; (set-face-background 'highlight-indentation-face "#141414")
