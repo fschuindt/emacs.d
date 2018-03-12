@@ -10,6 +10,12 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+;; Start Wakatime
+(global-wakatime-mode)
+
+;; Config auto-complete
+(ac-config-default)
+
 ;; Required to be used with neotree
 (require 'all-the-icons)
 
