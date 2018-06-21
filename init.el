@@ -16,6 +16,9 @@
 ;; Config auto-complete
 (ac-config-default)
 
+;; Set Unix line endings as default
+(setq-default buffer-file-coding-system 'utf-8-unix)
+
 ;; Support Brazilian ABNT-2 keyboard layout
 (require 'iso-transl)
 
