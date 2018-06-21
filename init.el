@@ -16,6 +16,9 @@
 ;; Config auto-complete
 (ac-config-default)
 
+;; Support Brazilian ABNT-2 keyboard layout
+(require 'iso-transl)
+
 ;; Required to be used with neotree
 (require 'all-the-icons)
 
@@ -61,7 +64,7 @@
 (setq linum-format " %d  ")
 
 ;; Default font
-(set-frame-font "Inconsolata 28" nil t)
+(set-frame-font "Inconsolata 19" nil t)
 
 ;; Use spaces to indent function
 (defun soft-tabs ()
@@ -130,7 +133,9 @@
   (interactive)
   (load-theme 'flatui t)
   (set-face-attribute 'mode-line-buffer-id nil :foreground "white")
-  (set-face-foreground 'dired-directory "dark magenta")
+
+  (with-eval-after-load "dired"
+    (set-face-foreground 'dired-directory "dark magenta"))
 )
 
 (defun blackfy ()
@@ -234,7 +239,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
+    (helm-ag protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
