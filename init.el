@@ -219,12 +219,13 @@
 ;; ----------------------------
 
 ;; Enables Projectile
-;; (projectile-mode)
-
 (require 'projectile)
 (projectile-global-mode +1)
 (setq projectile-enable-caching t)
-;; (global-set-key (kbd "C-c p .") 'helm-projectile-find-file-dwim)
+
+;; Helm/Projectile custom shortcuts
+(global-set-key (kbd "M-p") 'projectile-add-known-project)
+(global-set-key (kbd "M-n") 'helm-projectile-ag)
 
 ;; Set whitefy() as main theme script
 (whitefy)
