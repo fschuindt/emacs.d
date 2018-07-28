@@ -16,6 +16,9 @@
 ;; Config auto-complete
 (ac-config-default)
 
+;; Set up writeroom
+(writeroom-mode t)
+
 ;; Set Unix line endings as default
 (setq-default buffer-file-coding-system 'utf-8-unix)
 
@@ -243,7 +246,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (helm-ag protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
+    (writeroom-mode helm-ag protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
