@@ -37,7 +37,9 @@
 (setq neo-smart-open t)
 
 ;; Integrate neotree with projectile
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;; This makes the neotree toggles when a project is opened.
+;; Uncomment if you want, I'm tired of it.
+;; (setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; Use ls-lisp instead ot the system's ls.
 ;; Sort directories to be shown first in Dired mode.
