@@ -10,6 +10,9 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+;; Display system time (Eg.: 1:53pm)
+(display-time-mode 1)
+
 ;; Start Wakatime
 (global-wakatime-mode)
 
