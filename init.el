@@ -1,5 +1,3 @@
-;;
-
 ;; Disable alarm bell
 (setq ring-bell-function 'ignore)
 
