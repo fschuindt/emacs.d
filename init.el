@@ -1,3 +1,8 @@
+;; To Do
+;; 1. Remove menu title bar.
+;; 2. Fix ASCII / UTF-8 encoding / line ending issue.
+;; 3. Review whole file.
+
 ;; Disable alarm bell
 (setq ring-bell-function 'ignore)
 
@@ -20,10 +25,7 @@
 (ac-config-default)
 
 ;; Set up writeroom
-(writeroom-mode t)
-
-;; Set Unix line endings as default
-(setq-default buffer-file-coding-system 'utf-8-unix)
+;; (writeroom-mode t)
 
 ;; Support Brazilian ABNT-2 keyboard layout
 (require 'iso-transl)
