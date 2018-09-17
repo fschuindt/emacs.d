@@ -1,5 +1,4 @@
 ;; To Do
-;; 1. Remove menu title bar.
 ;; 2. Fix ASCII / UTF-8 encoding / line ending issue.
 ;; 3. Review whole file.
 
@@ -24,27 +23,8 @@
 ;; Config auto-complete
 (ac-config-default)
 
-;; Set up writeroom
-;; (writeroom-mode t)
-
 ;; Support Brazilian ABNT-2 keyboard layout
 (require 'iso-transl)
-
-;; Required to be used with neotree
-(require 'all-the-icons)
-
-;; Use neotree and set toggle shortcut
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-
-;; Every time when the neotree window is opened, let it find current
-;; file and jump to node.
-(setq neo-smart-open t)
-
-;; Integrate neotree with projectile
-;; This makes the neotree toggles when a project is opened.
-;; Uncomment if you want, I'm tired of it.
-;; (setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; Use ls-lisp instead ot the system's ls.
 ;; Sort directories to be shown first in Dired mode.
@@ -97,19 +77,6 @@
 (soft-tabs)
 
 (setq highlight-indentation-mode t)
-;; (set-face-background 'highlight-indentation-face "#141414")
-
-;; -------------------------------------
-;; Highlight Indentation Mode - BEGIN
-;; -------------------------------------
-;; (add-hook 'prog-mode-hook
-;;   (lambda ()
-;;     (highlight-indentation-mode t)))
-
-;; (set-face-background 'highlight-indentation-face "#141414")
-;; -------------------------------------
-;; Highlight Indentation Mode - END
-;; -------------------------------------
 
 ;; -------------------------------------
 ;; Show Invisibles - BEGIN
@@ -220,8 +187,10 @@
   (diff-hl-mode 1)
 ))
 
+;; Also set dired-hide-details as default mode.
 (add-hook 'dired-mode-hook (lambda ()
   (diff-hl-dired-mode 1)
+  (dired-hide-details-mode 1)
 ))
 
 ;; -----------------------------
@@ -236,6 +205,9 @@
 ;; Helm/Projectile custom shortcuts
 (global-set-key (kbd "M-p") 'projectile-add-known-project)
 (global-set-key (kbd "M-n") 'helm-projectile-ag)
+
+;; Open dired-mode when switching projects
+(setq projectile-switch-project-action 'projectile-dired)
 
 ;; Set whitefy() as main theme script
 (whitefy)
@@ -253,7 +225,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (feature-mode writeroom-mode helm-ag protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
+    (toml-mode feature-mode writeroom-mode helm-ag protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
