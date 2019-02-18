@@ -1,7 +1,3 @@
-;; To Do
-;; 2. Fix ASCII / UTF-8 encoding / line ending issue.
-;; 3. Review whole file.
-
 ;; Disable alarm bell
 (setq ring-bell-function 'ignore)
 
@@ -13,9 +9,6 @@
 ;; Start exec-path-from shell
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
-
-;; Display system time (Eg.: 1:53pm)
-(display-time-mode 1)
 
 ;; Start Wakatime
 (global-wakatime-mode)
@@ -38,6 +31,11 @@
 
 ;; Disable UTF-8 file tags
 (setq ruby-insert-encoding-magic-comment nil)
+
+;; Kill all buffers
+(defun buffer-reset ()
+  (interactive)
+  (mapc 'kill-buffer (buffer-list)))
 
 ;; Disable auto save files
 (setq auto-save-default nil)
@@ -212,6 +210,9 @@
 ;; Set whitefy() as main theme script
 (whitefy)
 
+;; Splash Image
+(setq fancy-splash-image "~/.emacs.d/gnu_splash.png")
+
 ;; custom-set-variables
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -221,11 +222,11 @@
  '(custom-safe-themes
    (quote
     ("e068203104e27ac7eeff924521112bfcd953a655269a8da660ebc150c97d0db8" default)))
- '(initial-buffer-choice "~/.emacs_welcome")
+ ;; '(initial-buffer-choice "~/.emacs_welcome")
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (toml-mode feature-mode writeroom-mode helm-ag protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
+    (multiple-cursors toml-mode feature-mode writeroom-mode helm-ag protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme all-the-icons neotree elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
