@@ -85,6 +85,9 @@
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
+;; Use rjsx-mode for all .js files
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+
 ;; set 2 spaces instead of TABs.
 (setq js-indent-level 2)
 (setq typescript-indent-level 2)
