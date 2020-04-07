@@ -172,9 +172,6 @@
 ;; 2 spaces for CSS
 (setq css-indent-offset 2)
 
-;; 2 spaces for JS
-(setq js-indent-level 2)
-
 ;; -------------------------------------
 ;; Indent - END
 ;; -------------------------------------
