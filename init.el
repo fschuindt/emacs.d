@@ -329,7 +329,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (company tide typescript-mode langtool gnuplot-mode yasnippet use-package dap-mode company-lsp lsp-ui flycheck helm-lsp lsp-mode flutter dart-mode terraform-mode json-reformatter-jq nginx-mode ac-alchemist ac-c-headers ac-clang ac-html ac-html-bootstrap ac-php alchemist php-mode auto-complete wakatime-mode multiple-cursors toml-mode feature-mode writeroom-mode helm-ag protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
+    (rjsx-mode company tide typescript-mode langtool gnuplot-mode yasnippet use-package dap-mode company-lsp lsp-ui flycheck helm-lsp lsp-mode flutter dart-mode terraform-mode json-reformatter-jq nginx-mode ac-alchemist ac-c-headers ac-clang ac-html ac-html-bootstrap ac-php alchemist php-mode auto-complete wakatime-mode multiple-cursors toml-mode feature-mode writeroom-mode helm-ag protobuf-mode dockerfile-mode rust-mode exec-path-from-shell vmd-mode flatui-theme elixir-mode helm-projectile projectile highlight-indentation blank-mode yaml-mode diff-hl markdown-mode fill-column-indicator highlight-indent-guides hl-anything highlight-chars color-theme-sanityinc-tomorrow)))
  '(tool-bar-mode nil)
  '(wakatime-cli-path "/usr/bin/wakatime")
  '(wakatime-python-bin nil))
