@@ -1,0 +1,14 @@
+tramp
+auto-save-list/*
+elpa/*
+straight/*
+transient/*
+session.*
+ac-comphist.dat
+projectile-bookmarks.eld
+projectile.cache
+.lsp-session-v1
+.cache
+.dap-breakpoints
+projects
+ido.last
